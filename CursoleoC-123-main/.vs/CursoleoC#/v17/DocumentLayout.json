@@ -1,10 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Aluno Noite\\Desktop\\CursoleoC#\\",
+  "WorkspaceRootPath": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|c:\\users\\aluno noite\\desktop\\cursoleoc#\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|c:\\users\\aluno noite\\downloads\\cursoleoc-123-main\\cursoleoc-123-main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|c:\\users\\aluno noite\\downloads\\cursoleoc-123-main\\cursoleoc-123-main\\exercicios3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|solutionrelative:exercicios3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|c:\\users\\aluno noite\\downloads\\cursoleoc-123-main\\cursoleoc-123-main\\exercicio_tiposprimitivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|solutionrelative:exercicio_tiposprimitivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|c:\\users\\aluno noite\\downloads\\cursoleoc-123-main\\cursoleoc-123-main\\exercicios2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|solutionrelative:exercicios2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|c:\\users\\aluno noite\\downloads\\cursoleoc-123-main\\cursoleoc-123-main\\exercicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|solutionrelative:exercicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,20 +30,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Exercicio_TiposPrimitivos.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Exercicio_TiposPrimitivos.cs",
+              "RelativeDocumentMoniker": "Exercicio_TiposPrimitivos.cs",
+              "ToolTip": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Exercicio_TiposPrimitivos.cs",
+              "RelativeToolTip": "Exercicio_TiposPrimitivos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T20:05:09.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Exercicios3.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Exercicios3.cs",
+              "RelativeDocumentMoniker": "Exercicios3.cs",
+              "ToolTip": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Exercicios3.cs",
+              "RelativeToolTip": "Exercicios3.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T20:05:09.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Exercicios2.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Exercicios2.cs",
+              "RelativeDocumentMoniker": "Exercicios2.cs",
+              "ToolTip": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Exercicios2.cs",
+              "RelativeToolTip": "Exercicios2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T20:05:09.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Exercicios.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Exercicios.cs",
+              "RelativeDocumentMoniker": "Exercicios.cs",
+              "ToolTip": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Exercicios.cs",
+              "RelativeToolTip": "Exercicios.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T20:05:09.407Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Desktop\\CursoleoC#\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Aluno Noite\\Desktop\\CursoleoC#\\Program.cs",
+              "ToolTip": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-26T19:14:54.119Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
