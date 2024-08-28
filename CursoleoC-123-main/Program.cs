@@ -1,5 +1,13 @@
 ﻿using CursoCSharp;
-using CursoCSharp.Exercicios;
+using CursoleoC_;
+
+Exercicios4 exercicios4 = new Exercicios4();
+//exercicios4.Var123();
+exercicios4.MostrarLista();
+
+
+
+
 //bool resultado;
 //resultado = _04_OperadoresLogicos.ELogico(false, true);
 //Console.WriteLine($"O resultado do operador logico E:{resultado}");
@@ -87,6 +95,7 @@ using CursoCSharp.Exercicios;
 
 //exercicio11 resul = new exercicio11();
 //resul.CalcularArea(5);
+
 
 
 

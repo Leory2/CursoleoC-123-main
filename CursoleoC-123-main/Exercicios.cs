@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CursoCSharp
 {
-    public static class Exercicios
+    public static class ExerciciosXD
     {
         //Exercício 2
 

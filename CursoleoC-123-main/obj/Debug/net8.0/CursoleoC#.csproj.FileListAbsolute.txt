@@ -1,0 +1,15 @@
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\obj\Debug\net8.0\CursoleoC#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\obj\Debug\net8.0\CursoleoC#.AssemblyInfoInputs.cache
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\obj\Debug\net8.0\CursoleoC#.AssemblyInfo.cs
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\obj\Debug\net8.0\CursoleoC#.csproj.CoreCompileInputs.cache
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\obj\Debug\net8.0\CursoleoC#.sourcelink.json
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\bin\Debug\net8.0\CursoleoC#.exe
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\bin\Debug\net8.0\CursoleoC#.deps.json
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\bin\Debug\net8.0\CursoleoC#.runtimeconfig.json
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\bin\Debug\net8.0\CursoleoC#.dll
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\bin\Debug\net8.0\CursoleoC#.pdb
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\obj\Debug\net8.0\CursoleoC#.dll
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\obj\Debug\net8.0\refint\CursoleoC#.dll
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\obj\Debug\net8.0\CursoleoC#.pdb
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\obj\Debug\net8.0\CursoleoC#.genruntimeconfig.cache
+C:\Users\Aluno Noite\Downloads\CursoleoC-123-main\CursoleoC-123-main\obj\Debug\net8.0\ref\CursoleoC#.dll
