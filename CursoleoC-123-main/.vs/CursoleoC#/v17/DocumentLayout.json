@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|c:\\users\\aluno noite\\downloads\\cursoleoc-123-main\\cursoleoc-123-main\\exercicios4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|solutionrelative:exercicios4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|c:\\users\\aluno noite\\downloads\\cursoleoc-123-main\\cursoleoc-123-main\\20-linq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|solutionrelative:20-linq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|c:\\users\\aluno noite\\downloads\\cursoleoc-123-main\\cursoleoc-123-main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|c:\\users\\aluno noite\\downloads\\cursoleoc-123-main\\cursoleoc-123-main\\exercicio5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A30DF4C-2CE2-4EB7-805C-A35A8428AB7C}|CursoleoC#.csproj|solutionrelative:exercicio5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T18:01:37.768Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Exercicios4.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Exercicios4.cs",
-              "RelativeDocumentMoniker": "Exercicios4.cs",
-              "ToolTip": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Exercicios4.cs",
-              "RelativeToolTip": "Exercicios4.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAcwCoAAAA6AAAAAAAAAA==",
+              "Title": "Exercicio5.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Exercicio5.cs",
+              "RelativeDocumentMoniker": "Exercicio5.cs",
+              "ToolTip": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\Exercicio5.cs",
+              "RelativeToolTip": "Exercicio5.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAADwv1MAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T17:47:13.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20-Linq.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\20-Linq.cs",
-              "RelativeDocumentMoniker": "20-Linq.cs",
-              "ToolTip": "C:\\Users\\Aluno Noite\\Downloads\\CursoleoC-123-main\\CursoleoC-123-main\\20-Linq.cs",
-              "RelativeToolTip": "20-Linq.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwCAAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T17:23:37.663Z",
+              "WhenOpened": "2024-08-29T17:58:08.202Z",
               "EditorCaption": ""
             }
           ]

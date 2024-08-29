@@ -1,9 +1,13 @@
 ﻿using CursoCSharp;
 using CursoleoC_;
 
-Exercicios4 exercicios4 = new Exercicios4();
+var ListP = new Exercicio1();
+ListP.ExibirConsulta();
+
+
+/*Exercicios4 exercicios4 = new Exercicios4();
 //exercicios4.Var123();
-exercicios4.MostrarLista();
+exercicios4.MostrarLista();*/
 
 
 
