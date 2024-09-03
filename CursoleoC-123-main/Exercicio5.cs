@@ -1,88 +1,96 @@
 ﻿using CursoCSharp;
-using CursoCSharp.Guia;
-using CursoleoC_;
+using CursoleoC_.Exercicios;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CursoleoC_
 {
-  /* 1. Crie uma consulta LINQ para encontrar todos os nomes das pessoas que têm o nome
-  começando com a letra &#39;A&#39; e que têm mais de 25 anos.*/
-    
-  public class Exercicio1
-  {
-    public void ExibirConsulta() 
-    { 
-        var pessoas = new List<PessoasLinq> 
-        { 
-         new PessoasLinq{nome = "Rodrigo", idade = 20},
-         new PessoasLinq{nome = "Arthur", idade = 30},
-         new PessoasLinq{nome = "Marcos", idade = 30},
-         new PessoasLinq{nome = "Thiago", idade = 50},
-         new PessoasLinq{nome = "Lia", idade = 15},
-         new PessoasLinq{nome = "zeze", idade = 20},
-         new PessoasLinq{nome = "suh", idade = 16},
-         new PessoasLinq{nome = "Ruan", idade = 25},
-         new PessoasLinq{nome = "Leo", idade = 20},
-         new PessoasLinq{nome = "Abigail", idade = 60},
-         new PessoasLinq{nome = "Davi", idade = 65},
-        };
-            var pessoasInicioAmomeMaiorque25 = pessoas.Where(p => p.nome.StartsWith("A") && p.idade > 25);
-           
-            foreach(var pessoa in pessoasInicioAmomeMaiorque25) 
-            {
-                Console.WriteLine($"o nome da pessoa é:{pessoa.nome}, e a idade da pessoa é:{pessoa.idade}");
-            
-            }
-    }
-  } 
-  public class PessoasLinq 
-  {
-        public string? nome;
-        public int? idade;
-    }
-    /*2.Adicione uma lista de produtos com propriedades Nome e Preço. Faça uma consulta
-        LINQ para encontrar os produtos cujo preço é superior à média de todos os produtos.*/
-    public class Produtos
+   public class Pessoa6969
     {
-        public string? nome;
-        public double? preco;
-    }
-    public class Exercicio2
-    {
-        public void Leo()
+        /* 1. Classe e Instanciação Básica
+           Crie uma classe chamada Pessoa com as propriedades Nome e Idade.Adicione um construtor
+           que inicialize essas propriedades e um método Falar que imprima uma mensagem dizendo
+           &quot; Olá, meu nome é[Nome] e eu tenho[Idade] anos.&quot;. Em seguida, crie uma instância da classe
+           Pessoa, defina os valores das propriedades e chame o método Falar.*/
+
+        public string? Nome;
+        public int? Idade;
+
+        public Pessoa6969(string nome, int idade)
         {
-            var Produtos = new List<Produtos>
-            {
-             new Produtos{nome = "Arroz", preco = 20.0},
-             new Produtos{nome = "Arroz", preco = 20.0},
-             new Produtos{nome = "Arroz", preco = 20.0},
-             new Produtos{nome = "Arroz", preco = 20.0},
-             new Produtos{nome = "Arroz", preco = 20.0},
-             new Produtos{nome = "Arroz", preco = 20.0},
-             new Produtos{nome = "Arroz", preco = 20.0},
-             new Produtos{nome = "Arroz", preco = 20.0},
-             new Produtos{nome = "Arroz", preco = 20.0},
-            };
-            var precoMedia = Produtos.Average(p =>  p.preco);
-            var precoSuperiorMedia = Produtos.Where(p => p.preco > precoMedia);
-            
-            foreach (var produto in precoSuperiorMedia) 
-            { 
-             Console.WriteLine(produto.nome, produto.preco);
-            
-            }
+            this.Nome = nome;
+            this.Idade = idade;
         }
-
+        public void Falar() 
+        {
+            Console.WriteLine($"Olá, meu nome é{Nome} e eu tenho{Idade}");
+        
+        }
+   }
+    /*Crie uma classe Calculadora com um método Soma que recebe dois parâmetros inteiros e
+     retorna a soma deles.Adicione também um método Subtracao que realiza a subtração de dois
+     números.Instancie a classe Calculadora, use os métodos para fazer algumas operações e exiba
+     os resultados.*/
+    public class Calculadora 
+    { 
+        public int Soma(int a, int b) 
+        {
+            return a + b;
+        }
+        public int Subtracao(int a, int b) 
+        { 
+         return a - b;
+        }
     }
-    /*3. Utilizando a lista de pessoas, crie uma consulta LINQ para listar o nome das pessoas
-    em ordem alfabética reversa.*/
+    /*3. Encapsulamento e Propriedades
+    Crie uma classe Carro com as propriedades Modelo, Ano e Preco.Utilize propriedades
+    automáticas para encapsular essas informações. Adicione um método ExibirInfo que exiba os
+    detalhes do carro.Instancie a classe Carro, defina valores para as propriedades e chame o
+    método ExibirInfo.*/
+    public class Carro
+    {
+        private string? Modelo { get; set; }
+        private int? Ano { get; set; }
+        private double? Preco { get; set; }
 
+        public Carro(string modelo, int ano, double preco)
+        {
+         this.Preco = preco;
+         this.Modelo = modelo;
+         this.Ano = ano; 
+        }
+        public void ExibirInfo() 
+        {
+            Console.WriteLine($"O modelo do carro é{Modelo}");
+            Console.WriteLine($"O modelo do carro é{Modelo}");
+            Console.WriteLine($"O modelo do carro é{Modelo}");
+        }
+    }
+    /*4. Métodos Estáticos
+    Crie uma classe Matematica com um método estático Fatorial que calcula o fatorial de um
+    número inteiro não-negativo.O método deve retornar o resultado.Utilize o método Fatorial
+    para calcular o fatorial de alguns números e exiba os resultados.*/
+    public class Matematica
+    {
+        public static void Fatorial(int numero)
+        {    
+           
+            if (numero < 0) 
+            {
+                Console.WriteLine("O número é negativo");
+            }
+            int result = 1;
+            for (int i = 1; i <= numero; i++) 
+            { 
+             result *= i;
+                
+            }
+           Console.WriteLine(result); 
+        }
+    }
 }
-
-    

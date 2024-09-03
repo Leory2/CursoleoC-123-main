@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CursoCSharp.Exercicios
+namespace CursoleoC_.Exercicios
 {
     /* 1. Defina uma classe chamada Carro que tenha as seguintes propriedades: marca
         (string), modelo (string) e ano (int). Crie um objeto dessa classe e inicialize suas
@@ -24,9 +24,9 @@ namespace CursoCSharp.Exercicios
 
         public Carro(string marca, string modelo, int ano)
         {
-            this.Marca = marca;
-            this.Modelo = modelo;
-            this.Ano = ano;
+            Marca = marca;
+            Modelo = modelo;
+            Ano = ano;
         }
 
         /* 2. Crie um método na classe Carro chamado ExibirDetalhes, que imprime no console os

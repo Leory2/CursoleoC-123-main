@@ -6,7 +6,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CursoCSharp
+namespace CursoleoC_.Exercicios
 {
     public static class ExerciciosXD
     {

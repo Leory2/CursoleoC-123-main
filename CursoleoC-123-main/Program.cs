@@ -1,8 +1,19 @@
 ﻿using CursoCSharp;
 using CursoleoC_;
 
-var ListP = new Exercicio1();
-ListP.ExibirConsulta();
+/*var Exer = new Pessoa6969("Leo",20);
+Exer.Falar();*/
+
+/*var Cal = new Calculadora();
+int resultadosub = Cal.Subtracao(10, 30);
+int resultado = Cal.Soma(10,20);*/
+
+/*Console.WriteLine(resultado);
+Console.WriteLine(resultadosub);
+var car = new Carro("Ferrari", 2005, 200000.00);
+car.ExibirInfo();*/
+
+Matematica.Fatorial(100);
 
 
 /*Exercicios4 exercicios4 = new Exercicios4();

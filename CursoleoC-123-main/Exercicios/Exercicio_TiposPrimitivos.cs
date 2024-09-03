@@ -5,7 +5,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Curso_C_2513
+namespace CursoleoC_.Exercicios
 {
     public class Exercicio_TiposPrimitivos
     {
@@ -171,25 +171,25 @@ namespace Curso_C_2513
          }
      */
         //Peça ao usuário para inserir seu nome e número favorito, depois exiba ambos:
-       /* public static void LernomeFav()
-        {
+        /* public static void LernomeFav()
+         {
 
-            string? nome;
-            string? numero;
+             string? nome;
+             string? numero;
 
-            Console.WriteLine("Digite o seu nome favorito:");
-            nome = Console.ReadLine().ToLower();
+             Console.WriteLine("Digite o seu nome favorito:");
+             nome = Console.ReadLine().ToLower();
 
 
-            Console.WriteLine("Digite seu número favorito");
-            numero = Console.ReadLine().ToLower();
+             Console.WriteLine("Digite seu número favorito");
+             numero = Console.ReadLine().ToLower();
 
-            Console.WriteLine($"Seu nome favorito é: {nome} e o seu número favorito é: {numero}");
-        }
-    */
-        
-    
-    
+             Console.WriteLine($"Seu nome favorito é: {nome} e o seu número favorito é: {numero}");
+         }
+     */
+
+
+
     }
 }
 
