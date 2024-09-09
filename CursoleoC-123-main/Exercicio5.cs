@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Intrinsics.X86;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -87,10 +88,65 @@ namespace CursoleoC_
             int result = 1;
             for (int i = 1; i <= numero; i++) 
             { 
-             result *= i;
-                
+             result *= i;   
             }
            Console.WriteLine(result); 
         }
     }
+    /*5. Construtores Sobrecarrregados
+     Crie uma classe Retangulo com propriedades Largura e Altura.Implemente dois construtores:
+     um que aceita largura e altura como parâmetros e outro que usa valores padrão(largura e
+     altura de 1). Adicione um método CalcularArea que retorna a área do retângulo.Instancie a
+     classe Retangulo usando ambos os construtores e exiba a área calculada.*/
+    public class Retangulo
+    {
+
+        public double Largura;
+        public double Altura;
+
+        public Retangulo(double largura, double altura)
+        {
+            Largura = largura;
+            Altura = altura;
+        }
+
+        public Retangulo() : this(1.0, 1.0) 
+        {
+        }
+
+       
+        public double CalcularArea()
+        {
+            return Largura * Altura;
+        }
+    }
+
+    /* 6. Métodos de Instância e Estáticos
+    Crie uma classe Pessoa com um método de instância AumentarIdade que incrementa a idade
+    da pessoa e um método estático CriarPessoa que cria uma nova instância de Pessoa com idade
+    inicial de 0. Instancie a classe usando o método estático e chame o método AumentarIdade.*/
+    public class Pessoa90
+    {
+       
+        public int Idade { get; private set; }
+
+      
+        private Pessoa90(int idade)
+        {
+            Idade = idade;
+        }
+
+
+        public void AumentarIdade()
+        {
+            Idade++;
+        }
+
+      
+        public static Pessoa CriarPessoa()
+        {
+            return new Pessoa90(0);
+        }
+    }
+
 }

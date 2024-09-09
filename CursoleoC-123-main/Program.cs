@@ -111,6 +111,20 @@ exercicios4.MostrarLista();*/
 //exercicio11 resul = new exercicio11();
 //resul.CalcularArea(5);
 
+var ret = new Retangulo(10.0, 10.0);
+var Valorarea = ret.CalcularArea();
+Console.WriteLine(Valorarea);
+
+
+Pessoa90 pessoa = Pessoa90.CriarPessoa();
+
+Console.WriteLine("Idade inicial: " + pessoa.Idade);
+
+pessoa.AumentarIdade();
+
+Console.WriteLine("Idade após aumentar: " + pessoa.Idade);
+
+
 
 
 
