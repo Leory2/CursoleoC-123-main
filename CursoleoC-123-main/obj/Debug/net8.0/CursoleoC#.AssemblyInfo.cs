@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CursoleoC#")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c43d22fb9bb80d1cc35d920401516dc7345995e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2b1e0535684b8bd1f160d84a3d3149a79f4d4df")]
 [assembly: System.Reflection.AssemblyProductAttribute("CursoleoC#")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CursoleoC#")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
