@@ -1,0 +1,12 @@
+{
+  "Alunos": [],
+  "Servicos": [
+    {
+      "Nome": "cursinho"
+    },
+    {
+      "Nome": "curso certificado"
+    }
+  ],
+  "ServicosPrestados": []
+}

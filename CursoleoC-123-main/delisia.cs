@@ -4,10 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CursoCSharp
+namespace CursoleoC_
 {
-    public static class _03_OperadoresAritmeticos
-    {
-    }
+    
 }
-
