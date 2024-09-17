@@ -1,6 +1,7 @@
 ﻿using Curso_C_;
 using System;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using System.Text.Json;
 
 
@@ -902,15 +903,24 @@ namespace GerenciamentoEducacao
             int opcao = 0;
             do
             {
+               
                 Console.Clear();
-                Console.WriteLine("============================================================");
-                Console.WriteLine("==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ===========");
-                Console.WriteLine("===========================================================\n");
-                Console.WriteLine("*****           1. Gerenciar Alunos                     *****");
-                Console.WriteLine("*****           2. Gerenciar Serviços                   *****");
-                Console.WriteLine("*****           3. Gerenciar Serviços por Aluno         *****");
-                Console.WriteLine("*****                0. Sair                            *****");
-                Console.WriteLine("============================================================");
+                Console.WriteLine("|=============================================================|");
+                Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+                Console.WriteLine("|=============================================================|");
+                Console.WriteLine("---------------------------------------------------------------");
+                Console.WriteLine("|*****             Autor do sistema: Leo                 *****|");
+                Console.WriteLine("---------------------------------------------------------------");
+                // Adiciona a data atual ao menu
+                string dataAtual = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                Console.WriteLine($"|*****                 Data: {dataAtual}         *****|");
+                Console.WriteLine("---------------------------------------------------------------");
+                Console.WriteLine("|*****           1. Gerenciar Alunos                     *****|");
+                Console.WriteLine("|*****           2. Gerenciar Serviços                   *****|");
+                Console.WriteLine("|*****           3. Gerenciar Serviços por Aluno         *****|");
+                Console.WriteLine("|*****                0. Sair                            *****|");
+                Console.WriteLine("|=============================================================|");
+              
                 Console.Write("Escolha uma opção: ");
                 opcao = int.Parse(Console.ReadLine());
 
@@ -936,52 +946,80 @@ namespace GerenciamentoEducacao
             } while (opcao != 0);
         }
 
+
         static void MenuAlunos()
         {
             int opcao = 0;
             do
             {
                 Console.Clear();
+                Console.WriteLine("|=============================================================|");
+                Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+                Console.WriteLine("|=============================================================|");
                 Console.WriteLine("==============================================");
                 Console.WriteLine("==========   GERENCIAR ALUNOS   ==============");
                 Console.WriteLine("==============================================\n");
                 Console.WriteLine("1. Adicionar Aluno");
                 Console.WriteLine("2. Listar Alunos");
                 Console.WriteLine("3. Remover Aluno");
+                Console.WriteLine("4. Procurar Aluno por Id");
                 Console.WriteLine("0. Voltar");
                 Console.WriteLine("==============================================");
                 Console.Write("Escolha uma opção: ");
-                opcao = int.Parse(Console.ReadLine());
 
-                switch (opcao)
+                // Captura a tecla pressionada
+                var tecla = Console.ReadKey(intercept: true);
+
+                if (tecla.Key == ConsoleKey.Escape)
                 {
-                    case 1:
-                        AdicionarAluno();
-                        break;
-                    case 2:
-                        ListarAlunos();
-                        break;
-                    case 3:
-                        RemoverAluno();
-                        break;
-                    case 0:
-                        Console.WriteLine("\nVoltando ao menu principal...");
-                        break;
-                    default:
-                        Console.WriteLine("\nOpção inválida, tente novamente.");
-                        break;
+                    // Se a tecla for Esc, retorna ao menu principal
+                    Console.WriteLine("\nVoltando ao menu principal...");
+                    return; // Encerra o método MenuAlunos e retorna ao menu principal
                 }
+
+                // Converte a tecla pressionada para um número
+                if (int.TryParse(tecla.KeyChar.ToString(), out opcao))
+                {
+                    switch (opcao)
+                    {
+                        case 1:
+                            AdicionarAluno();
+                            break;
+                        case 2:
+                            ListarAlunos();
+                            break;
+                        case 3:
+                            RemoverAlunoPorId();
+                            break;
+                        case 4:
+                            ProcurarAlunoPorIdMenu();
+                            break;
+                        case 0:
+                            Console.WriteLine("\nVoltando ao menu principal...");
+                            return; // Encerra o método MenuAlunos e retorna ao menu principal
+                        default:
+                            Console.WriteLine("\nOpção inválida, tente novamente.");
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\nOpção inválida, tente novamente.");
+                }
+
                 Console.WriteLine("\nPressione qualquer tecla para continuar...");
                 Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
-            } while (opcao != 0);
+            } while (true); // Mantém o loop até que o usuário selecione a opção 0 ou pressione Esc
         }
-
         static void MenuServicos()
         {
             int opcao = 0;
             do
             {
                 Console.Clear();
+                Console.WriteLine("|=============================================================|");
+                Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+                Console.WriteLine("|=============================================================|");
                 Console.WriteLine("==============================================");
                 Console.WriteLine("==========   GERENCIAR SERVIÇOS   ============");
                 Console.WriteLine("==============================================\n");
@@ -1004,6 +1042,7 @@ namespace GerenciamentoEducacao
                     case 3:
                         RemoverServico();
                         break;
+                   
                     case 0:
                         Console.WriteLine("\nVoltando ao menu principal...");
                         break;
@@ -1022,6 +1061,9 @@ namespace GerenciamentoEducacao
             do
             {
                 Console.Clear();
+                Console.WriteLine("|=============================================================|");
+                Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+                Console.WriteLine("|=============================================================|");
                 Console.WriteLine("==============================================");
                 Console.WriteLine("====== GERENCIAR SERVIÇOS POR ALUNO ===========");
                 Console.WriteLine("==============================================\n");
@@ -1055,6 +1097,9 @@ namespace GerenciamentoEducacao
         static void AdicionarAluno()
         {
             Console.Clear();
+            Console.WriteLine("|=============================================================|");
+            Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+            Console.WriteLine("|=============================================================|");
             Console.WriteLine("==============================================");
             Console.WriteLine("=========   ADICIONAR NOVO ALUNO   ===========");
             Console.WriteLine("==============================================");
@@ -1062,6 +1107,33 @@ namespace GerenciamentoEducacao
             string nome = Console.ReadLine();
             Console.Write("Digite o CPF do aluno: ");
             string cpf = Console.ReadLine();
+            Console.Write("Digite o Id do aluno: ");
+            int Id = int.Parse(Console.ReadLine());
+            
+            if (string.IsNullOrWhiteSpace(nome))
+            {
+                Console.WriteLine("\nNome do aluno não pode estar vazio.");
+                return;
+            }  
+
+            if (cpf.Length != 11 || !cpf.All(char.IsDigit))
+            {
+                Console.WriteLine("\nCPF inválido. O CPF deve conter 11 dígitos.");
+                return;
+            }
+           
+            if (!int.TryParse(Console.ReadLine(), out int Id) || Id <= 0)
+            {
+                Console.WriteLine("\nId inválido. O Id deve ser um número positivo.");
+                return;
+            }
+
+
+            if (alunos.Any(a => a.Id == Id))
+            {
+                Console.WriteLine("\nAluno com este ID já existe.");
+                return;
+            }
 
             // Verificar se o CPF já existe
             if (alunos.Any(a => a.Cpf == cpf))
@@ -1070,7 +1142,7 @@ namespace GerenciamentoEducacao
                 return;
             }
 
-            Aluno aluno = new Aluno(nome, cpf);
+            Aluno aluno = new Aluno(nome, cpf, Id);
             alunos.Add(aluno);
             Console.WriteLine("\nAluno adicionado com sucesso!");
 
@@ -1078,9 +1150,17 @@ namespace GerenciamentoEducacao
             SalvarAlunos();
         }
 
+
+
+        // Método para obter a entrada do usuário, com suporte para cancelamento
+
+
         static void ListarAlunos()
         {
             Console.Clear();
+            Console.WriteLine("|=============================================================|");
+            Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+            Console.WriteLine("|=============================================================|");
             Console.WriteLine("==============================================");
             Console.WriteLine("=========   LISTA DE ALUNOS CADASTRADOS   =====");
             Console.WriteLine("==============================================");
@@ -1093,39 +1173,74 @@ namespace GerenciamentoEducacao
             {
                 for (int i = 0; i < alunos.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {alunos[i].Nome} - CPF: {alunos[i].Cpf}");
+                    Console.Clear(); // Limpa a tela para mostrar uma lista mais limpa e atualizada
+                    Console.WriteLine("|=============================================================|");
+                    Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+                    Console.WriteLine("|=============================================================|");
+                    Console.WriteLine("==============================================");
+                    Console.WriteLine("=========   LISTA DE ALUNOS CADASTRADOS   =====");
+                    Console.WriteLine("==============================================");
+                    Console.WriteLine($"{i + 1}. {alunos[i].Nome} - CPF: {alunos[i].Cpf} - Id: {alunos[i].Id}");
+
+                    Console.WriteLine("\nPressione ESC para cancelar e voltar ao menu principal...");
+
+                    var tecla = Console.ReadKey(intercept: true);
+                    if (tecla.Key == ConsoleKey.Escape)
+                    {
+                        Console.WriteLine("\nAção cancelada. Voltando ao menu principal...");
+                        return; // Encerra o método ListarAlunos e retorna ao menu principal
+                    }
                 }
             }
+
+            // Após listar todos os alunos, permite ao usuário pressionar uma tecla para continuar
+            Console.WriteLine("\nPressione qualquer tecla para continuar...");
+            Console.ReadKey();
         }
-
-        static void RemoverAluno()
+        static void RemoverAlunoPorId()
         {
+            Console.Clear();
+            Console.WriteLine("|=============================================================|");
+            Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+            Console.WriteLine("|=============================================================|");
+            Console.WriteLine("==============================================");
+            Console.WriteLine("=========   REMOVER ALUNO POR ID   ===========");
+            Console.WriteLine("==============================================");
             ListarAlunos();
-            Console.Write("\nDigite o número do aluno a ser removido: ");
-            int indice = int.Parse(Console.ReadLine()) - 1;
+            Console.Write("\nDigite o Id do aluno a ser removido: ");
+            int id = int.Parse(Console.ReadLine());
 
-            if (indice >= 0 && indice < alunos.Count)
+            // Buscar o aluno pelo ID
+            Aluno aluno = alunos.FirstOrDefault(a => a.Id == id);
+
+            if (aluno != null)
             {
-                alunos.RemoveAt(indice);
+                alunos.Remove(aluno);
                 Console.WriteLine("\nAluno removido com sucesso!");
                 SalvarAlunos(); // Atualiza o arquivo após remoção
             }
             else
             {
-                Console.WriteLine("\nNúmero inválido.");
+                Console.WriteLine("\nAluno não encontrado com este ID.");
             }
+
         }
 
         static void AdicionarServico()
         {
             Console.Clear();
+            Console.WriteLine("|=============================================================|");
+            Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+            Console.WriteLine("|=============================================================|");
             Console.WriteLine("==============================================");
             Console.WriteLine("=========   ADICIONAR NOVO SERVIÇO   =========");
-            Console.WriteLine("==============================================");
+            Console.WriteLine("==============================================");          
             Console.Write("Digite o nome do serviço: ");
             string nome = Console.ReadLine();
-
-            Servico servico = new Servico(nome);
+            Console.Write("Digite o Id do serviço: ");
+            int id = int.Parse(Console.ReadLine());
+            
+            Servico servico = new Servico(nome, id);
             servicos.Add(servico);
             Console.WriteLine("\nServiço adicionado com sucesso!");
             SalvarServicos(); // Atualiza o arquivo após adicionar serviço
@@ -1134,6 +1249,9 @@ namespace GerenciamentoEducacao
         static void ListarServicos()
         {
             Console.Clear();
+            Console.WriteLine("|=============================================================|");
+            Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+            Console.WriteLine("|=============================================================|");
             Console.WriteLine("==============================================");
             Console.WriteLine("=========   LISTA DE SERVIÇOS CADASTRADOS   ===");
             Console.WriteLine("==============================================");
@@ -1146,45 +1264,104 @@ namespace GerenciamentoEducacao
             {
                 for (int i = 0; i < servicos.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {servicos[i].Nome}");
+                    Console.WriteLine($"{i + 1}. {servicos[i].Nome} {servicos[i].Id}");
                 }
             }
         }
+        static void ProcurarAlunoPorIdMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("|=============================================================|");
+            Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+            Console.WriteLine("|=============================================================|");
+            Console.WriteLine("==============================================");
+            Console.WriteLine("======  PROCURAR ALUNO POR ID ================");
+            Console.WriteLine("==============================================");
+            Console.Write("Digite o ID do aluno: ");
+            int id = int.Parse(Console.ReadLine());
+
+            Aluno aluno = ProcurarAlunoPorId(id);
+
+            if (aluno != null)
+            {
+                Console.WriteLine($"\nAluno encontrado: Nome: {aluno.Nome}, CPF: {aluno.Cpf}, ID: {aluno.Id}");
+            }
+            else
+            {
+                Console.WriteLine("\nAluno não encontrado.");
+            }
+        }
+
+        static Aluno ProcurarAlunoPorId(int id)
+        {
+            return alunos.FirstOrDefault(a => a.Id == id);
+        }
+
 
         static void RemoverServico()
         {
-            ListarServicos();
-            Console.Write("\nDigite o número do serviço a ser removido: ");
-            int indice = int.Parse(Console.ReadLine()) - 1;
+            Console.Clear();
+            Console.WriteLine("|=============================================================|");
+            Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+            Console.WriteLine("|=============================================================|");
+            Console.WriteLine("==============================================");
+            Console.WriteLine("=========   REMOVER SERVIÇO POR ID   ==========");
+            Console.WriteLine("==============================================");
 
-            if (indice >= 0 && indice < servicos.Count)
+            // Listar serviços para o usuário escolher
+            ListarServicos();
+
+            // Solicitar o ID do serviço a ser removido
+            Console.Write("\nDigite o ID do serviço a ser removido: ");
+            int id = int.Parse(Console.ReadLine());
+
+            // Buscar o serviço pelo ID
+            Servico servico = servicos.FirstOrDefault(s => s.Id == id);
+
+            if (servico != null)
             {
-                servicos.RemoveAt(indice);
+                servicos.Remove(servico);
                 Console.WriteLine("\nServiço removido com sucesso!");
                 SalvarServicos(); // Atualiza o arquivo após remoção
             }
             else
             {
-                Console.WriteLine("\nNúmero inválido.");
+                Console.WriteLine("\nServiço não encontrado com este ID.");
             }
         }
 
+
         static void AssociarServicoAAluno()
         {
+            Console.Clear();
+            Console.WriteLine("|=============================================================|");
+            Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+            Console.WriteLine("|=============================================================|");
+            Console.WriteLine("==============================================");
+            Console.WriteLine("====== ASSOCIAÇÃO DE SERVIÇOS A ALUNO ========");
+            Console.WriteLine("==============================================");
+
+            // Listar alunos e solicitar ID
             ListarAlunos();
-            Console.Write("\nDigite o número do aluno: ");
-            int alunoIndice = int.Parse(Console.ReadLine()) - 1;
+            Console.Write("\nDigite o ID do aluno: ");
+            int alunoId = int.Parse(Console.ReadLine());
 
-            if (alunoIndice >= 0 && alunoIndice < alunos.Count)
+            // Buscar o aluno pelo ID
+            Aluno aluno = alunos.FirstOrDefault(a => a.Id == alunoId);
+
+            if (aluno != null)
             {
-                Aluno aluno = alunos[alunoIndice];
+                // Listar serviços e solicitar ID
                 ListarServicos();
-                Console.Write("Digite o número do serviço: ");
-                int servicoIndice = int.Parse(Console.ReadLine()) - 1;
+                Console.Write("Digite o ID do serviço: ");
+                int servicoId = int.Parse(Console.ReadLine());
 
-                if (servicoIndice >= 0 && servicoIndice < servicos.Count)
+                // Buscar o serviço pelo ID
+                Servico servico = servicos.FirstOrDefault(s => s.Id == servicoId);
+
+                if (servico != null)
                 {
-                    Servico servico = servicos[servicoIndice];
+                    // Criar e adicionar o serviço prestado
                     ServicoPrestado servicoPrestado = new ServicoPrestado
                     {
                         AlunoCpf = aluno.Cpf,
@@ -1197,25 +1374,35 @@ namespace GerenciamentoEducacao
                 }
                 else
                 {
-                    Console.WriteLine("\nNúmero de serviço inválido.");
+                    Console.WriteLine("\nServiço não encontrado com este ID.");
                 }
             }
             else
             {
-                Console.WriteLine("\nNúmero de aluno inválido.");
+                Console.WriteLine("\nAluno não encontrado com este ID.");
             }
         }
 
+
         static void ListarServicosPorAluno()
         {
-            ListarAlunos();
-            Console.Write("\nDigite o número do aluno: ");
-            int alunoIndice = int.Parse(Console.ReadLine()) - 1;
+            Console.Clear();
+            Console.WriteLine("==============================================");
+            Console.WriteLine("====== SERVIÇOS ASSOCIADOS A UM ALUNO ========");
+            Console.WriteLine("==============================================");
 
-            if (alunoIndice >= 0 && alunoIndice < alunos.Count)
+            // Listar alunos e solicitar ID
+            ListarAlunos();
+            Console.Write("\nDigite o ID do aluno: ");
+            int alunoId = int.Parse(Console.ReadLine());
+
+            // Buscar o aluno pelo ID
+            Aluno aluno = alunos.FirstOrDefault(a => a.Id == alunoId);
+
+            if (aluno != null)
             {
-                string alunoCpf = alunos[alunoIndice].Cpf;
-                var servicosPorAluno = servicosPrestados.Where(sp => sp.AlunoCpf == alunoCpf).ToList();
+                // Filtrar os serviços prestados para este aluno
+                var servicosPorAluno = servicosPrestados.Where(sp => sp.AlunoCpf == aluno.Cpf).ToList();
 
                 Console.Clear();
                 Console.WriteLine("==============================================");
@@ -1236,10 +1423,12 @@ namespace GerenciamentoEducacao
             }
             else
             {
-                Console.WriteLine("\nNúmero de aluno inválido.");
+                Console.WriteLine("\nAluno não encontrado com este ID.");
             }
-        }
 
+            Console.WriteLine("\nPressione qualquer tecla para continuar...");
+            Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
+        }
         static void CarregarDados()
         {
             // Carregar alunos
@@ -1398,13 +1587,16 @@ namespace GerenciamentoEducacao
                 Console.WriteLine($"Erro ao salvar serviços prestados: {ex.Message}");
             }
         }
+       
 
         static void SalvarDados()
         {
             SalvarAlunos();
             SalvarServicos();
             SalvarServicosPrestados();
+            
         }
+        
     }
 
 }

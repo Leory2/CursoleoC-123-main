@@ -15,11 +15,15 @@ namespace Curso_C_
     {
         public string Nome { get; set; }
         public string Cpf { get; set; }
+        public int Id { get; set; }
 
-        public Aluno(string nome, string cpf)
+        private int nextId = 1;
+
+        public Aluno(string nome, string cpf, int id)
         {
             Nome = nome;
             Cpf = cpf;
+            Id = id;
         }
     }
 
@@ -27,9 +31,12 @@ namespace Curso_C_
     {
         public string Nome { get; set; }
 
-        public Servico(string nome)
+        public int Id { get; set; }
+
+        public Servico(string nome, int id)
         {
             Nome = nome;
+            Id = id;
         }
     }
 
@@ -37,6 +44,8 @@ namespace Curso_C_
     {
         public string AlunoCpf { get; set; }
         public string ServicoNome { get; set; }
+       
+        public int ServicoId { get; set; }
         public DateTime DataPrestacao { get; set; }
     }
 }   
