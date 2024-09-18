@@ -903,25 +903,44 @@ namespace GerenciamentoEducacao
             int opcao = 0;
             do
             {
-               
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.Clear();
-                Console.WriteLine("|=============================================================|");
-                Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-                Console.WriteLine("|=============================================================|");
-                Console.WriteLine("---------------------------------------------------------------");
-                Console.WriteLine("|*****             Autor do sistema: Leo                 *****|");
-                Console.WriteLine("---------------------------------------------------------------");
-                // Adiciona a data atual ao menu
-                string dataAtual = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-                Console.WriteLine($"|*****                 Data: {dataAtual}         *****|");
-                Console.WriteLine("---------------------------------------------------------------");
-                Console.WriteLine("|*****           1. Gerenciar Alunos                     *****|");
-                Console.WriteLine("|*****           2. Gerenciar Serviços                   *****|");
-                Console.WriteLine("|*****           3. Gerenciar Serviços por Aluno         *****|");
-                Console.WriteLine("|*****                0. Sair                            *****|");
-                Console.WriteLine("|=============================================================|");
+
               
-                Console.Write("Escolha uma opção: ");
+                Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+                Console.WriteLine("║ *********************************************************** ║");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("║ *********************************************************** ║");
+                Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("═══════════════════════════════════════════════════════════════");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("║*****             Autor do sistema: Leo                 *****║");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("║*****             Versão do sistema: 1.0                *****║");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("═══════════════════════════════════════════════════════════════");
+                Console.ForegroundColor = ConsoleColor.White;
+                string dataAtual = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                Console.WriteLine($"║*****             Data: {dataAtual}             *****║");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+                Console.WriteLine("║ *********************************************************** ║");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("║*****           1. Gerenciar Alunos                     *****║");
+                Console.WriteLine("║*****           2. Gerenciar Serviços                   *****║");
+                Console.WriteLine("║*****           3. Gerenciar Serviços por Aluno         *****║");
+                Console.WriteLine("║*****                0. Sair                            *****║");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("║ *********************************************************** ║");
+                Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("                    ╔═══════════════════╗");
+                Console.WriteLine("                    ║ Digite uma opção: ║");
+                Console.WriteLine("                    ╚═══════════════════╝");
+
                 opcao = int.Parse(Console.ReadLine());
 
                 switch (opcao)
@@ -953,33 +972,40 @@ namespace GerenciamentoEducacao
             do
             {
                 Console.Clear();
-                Console.WriteLine("|=============================================================|");
+                Console.ForegroundColor = ConsoleColor.Red;
+
+                Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+                Console.WriteLine("║ *********************************************************** ║");
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-                Console.WriteLine("|=============================================================|");
-                Console.WriteLine("==============================================");
-                Console.WriteLine("==========   GERENCIAR ALUNOS   ==============");
-                Console.WriteLine("==============================================\n");
-                Console.WriteLine("1. Adicionar Aluno");
-                Console.WriteLine("2. Listar Alunos");
-                Console.WriteLine("3. Remover Aluno");
-                Console.WriteLine("4. Procurar Aluno por Id");
-                Console.WriteLine("0. Voltar");
-                Console.WriteLine("==============================================");
-                Console.Write("Escolha uma opção: ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("║ *********************************************************** ║");
+                Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("═══════════════════════════════════════════════════════════════");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("║*****                GERENCIAR ALUNOS                   *****║");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("═══════════════════════════════════════════════════════════════");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("║*****        1. Adicionar Aluno                        *****║");
+                Console.WriteLine("║*****        2. Listar Alunos                          *****║");
+                Console.WriteLine("║*****        3. Remover Aluno                          *****║");
+                Console.WriteLine("║*****        4. Procurar Aluno por Id                  *****║");
+                Console.WriteLine("║*****        0. Voltar                                 *****║");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("═══════════════════════════════════════════════════════════════");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("                    ╔═══════════════════╗");
+                Console.WriteLine("                    ║ Digite uma opção: ║");
+                Console.WriteLine("                    ╚═══════════════════╝");
 
-                // Captura a tecla pressionada
-                var tecla = Console.ReadKey(intercept: true);
-
-                if (tecla.Key == ConsoleKey.Escape)
-                {
-                    // Se a tecla for Esc, retorna ao menu principal
-                    Console.WriteLine("\nVoltando ao menu principal...");
-                    return; // Encerra o método MenuAlunos e retorna ao menu principal
-                }
+               
 
                 // Converte a tecla pressionada para um número
-                if (int.TryParse(tecla.KeyChar.ToString(), out opcao))
-                {
+                bool entradaValida = int.TryParse(Console.ReadLine(), out opcao);
+               
+               
                     switch (opcao)
                     {
                         case 1:
@@ -1001,59 +1027,72 @@ namespace GerenciamentoEducacao
                             Console.WriteLine("\nOpção inválida, tente novamente.");
                             break;
                     }
-                }
-                else
-                {
-                    Console.WriteLine("\nOpção inválida, tente novamente.");
-                }
-
+             
                 Console.WriteLine("\nPressione qualquer tecla para continuar...");
                 Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
             } while (true); // Mantém o loop até que o usuário selecione a opção 0 ou pressione Esc
         }
+
         static void MenuServicos()
         {
             int opcao = 0;
             do
             {
                 Console.Clear();
-                Console.WriteLine("|=============================================================|");
-                Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-                Console.WriteLine("|=============================================================|");
-                Console.WriteLine("==============================================");
-                Console.WriteLine("==========   GERENCIAR SERVIÇOS   ============");
-                Console.WriteLine("==============================================\n");
-                Console.WriteLine("1. Adicionar Serviço");
-                Console.WriteLine("2. Listar Serviços");
-                Console.WriteLine("3. Remover Serviço");
-                Console.WriteLine("0. Voltar");
-                Console.WriteLine("==============================================");
-                Console.Write("Escolha uma opção: ");
-                opcao = int.Parse(Console.ReadLine());
+                Console.ForegroundColor = ConsoleColor.Red;
 
-                switch (opcao)
-                {
-                    case 1:
-                        AdicionarServico();
-                        break;
-                    case 2:
-                        ListarServicos();
-                        break;
-                    case 3:
-                        RemoverServico();
-                        break;
-                   
-                    case 0:
-                        Console.WriteLine("\nVoltando ao menu principal...");
-                        break;
-                    default:
-                        Console.WriteLine("\nOpção inválida, tente novamente.");
-                        break;
-                }
+                Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+                Console.WriteLine("║ *********************************************************** ║");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("║ *********************************************************** ║");
+                Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("═══════════════════════════════════════════════════════════════");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("║*****            GERENCIAR SERVIÇOS                    *****║");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("═══════════════════════════════════════════════════════════════");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("║*****        1. Adicionar Serviço                     *****║");
+                Console.WriteLine("║*****        2. Listar Serviços                       *****║");
+                Console.WriteLine("║*****        3. Remover Serviço                       *****║");
+                Console.WriteLine("║*****        0. Voltar                                *****║");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("═══════════════════════════════════════════════════════════════");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("                    ╔═══════════════════╗");
+                Console.WriteLine("                    ║ Digite uma opção: ║");
+                Console.WriteLine("                    ╚═══════════════════╝");
+
+                // Captura e valida a opção
+                bool entradaValida = int.TryParse(Console.ReadLine(), out opcao);
+               
+                    switch (opcao)
+                    {
+                        case 1:
+                            AdicionarServico();
+                            break;
+                        case 2:
+                            ListarServicos();
+                            break;
+                        case 3:
+                            RemoverServico();
+                            break;
+                        case 0:
+                            Console.WriteLine("\nVoltando ao menu principal...");
+                            return; // Sai do menu de serviços
+                        default:
+                            Console.WriteLine("\nOpção inválida, tente novamente.");
+                            break;
+                    }
+                
                 Console.WriteLine("\nPressione qualquer tecla para continuar...");
                 Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
             } while (opcao != 0);
         }
+
 
         static void MenuServicosPorAluno()
         {
@@ -1061,34 +1100,63 @@ namespace GerenciamentoEducacao
             do
             {
                 Console.Clear();
-                Console.WriteLine("|=============================================================|");
-                Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-                Console.WriteLine("|=============================================================|");
-                Console.WriteLine("==============================================");
-                Console.WriteLine("====== GERENCIAR SERVIÇOS POR ALUNO ===========");
-                Console.WriteLine("==============================================\n");
-                Console.WriteLine("1. Associar Serviço a Aluno");
-                Console.WriteLine("2. Listar Serviços de um Aluno");
-                Console.WriteLine("0. Voltar");
-                Console.WriteLine("==============================================");
-                Console.Write("Escolha uma opção: ");
-                opcao = int.Parse(Console.ReadLine());
+                Console.ForegroundColor = ConsoleColor.Red;
 
-                switch (opcao)
+                // Cabeçalho do Menu
+                Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+                Console.WriteLine("║ *********************************************************** ║");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("║ *********************************************************** ║");
+                Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("═══════════════════════════════════════════════════════════════");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("║*****           GERENCIAR SERVIÇOS POR ALUNO             *****║");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("═══════════════════════════════════════════════════════════════");
+                Console.ForegroundColor = ConsoleColor.White;
+
+                // Opções do Menu
+                Console.WriteLine("║*****        1. Associar Serviço a Aluno                *****║");
+                Console.WriteLine("║*****        2. Listar Serviços de um Aluno              *****║");
+                Console.WriteLine("║*****        0. Voltar                                   *****║");
+
+                // Rodapé do Menu
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("═══════════════════════════════════════════════════════════════");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("                    ╔═══════════════════╗");
+                Console.WriteLine("                    ║ Digite uma opção: ║");
+                Console.WriteLine("                    ╚═══════════════════╝");
+
+                // Entrada de opção do usuário
+                bool entradaValida = int.TryParse(Console.ReadLine(), out opcao);
+
+                if (entradaValida)
                 {
-                    case 1:
-                        AssociarServicoAAluno();
-                        break;
-                    case 2:
-                        ListarServicosPorAluno();
-                        break;
-                    case 0:
-                        Console.WriteLine("\nVoltando ao menu principal...");
-                        break;
-                    default:
-                        Console.WriteLine("\nOpção inválida, tente novamente.");
-                        break;
+                    switch (opcao)
+                    {
+                        case 1:
+                            AssociarServicoAAluno();
+                            break;
+                        case 2:
+                            ListarServicosPorAluno();
+                            break;
+                        case 0:
+                            Console.WriteLine("\nVoltando ao menu principal...");
+                            break;
+                        default:
+                            Console.WriteLine("\nOpção inválida, tente novamente.");
+                            break;
+                    }
                 }
+                else
+                {
+                    Console.WriteLine("\nEntrada inválida, tente novamente.");
+                }
+
                 Console.WriteLine("\nPressione qualquer tecla para continuar...");
                 Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
             } while (opcao != 0);
@@ -1097,57 +1165,77 @@ namespace GerenciamentoEducacao
         static void AdicionarAluno()
         {
             Console.Clear();
-            Console.WriteLine("|=============================================================|");
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            // Cabeçalho do Menu
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-            Console.WriteLine("|=============================================================|");
-            Console.WriteLine("==============================================");
-            Console.WriteLine("=========   ADICIONAR NOVO ALUNO   ===========");
-            Console.WriteLine("==============================================");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("║*****                ADICIONAR NOVO ALUNO                *****║");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            // Entrada dos dados do aluno
             Console.Write("Digite o nome do aluno: ");
             string nome = Console.ReadLine();
             Console.Write("Digite o CPF do aluno: ");
             string cpf = Console.ReadLine();
             Console.Write("Digite o Id do aluno: ");
-            int Id = int.Parse(Console.ReadLine());
-            
+            int id;
+
+            // Validação do ID
+            bool idValido = int.TryParse(Console.ReadLine(), out id);
+            if (!idValido)
+            {
+                Console.WriteLine("\nID inválido. Digite um número válido.");
+                return;
+            }
+
+            // Validação do nome
             if (string.IsNullOrWhiteSpace(nome))
             {
                 Console.WriteLine("\nNome do aluno não pode estar vazio.");
                 return;
-            }  
+            }
 
+            // Validação do CPF
             if (cpf.Length != 11 || !cpf.All(char.IsDigit))
             {
                 Console.WriteLine("\nCPF inválido. O CPF deve conter 11 dígitos.");
                 return;
             }
-           
-            if (!int.TryParse(Console.ReadLine(), out int Id) || Id <= 0)
-            {
-                Console.WriteLine("\nId inválido. O Id deve ser um número positivo.");
-                return;
-            }
 
-
-            if (alunos.Any(a => a.Id == Id))
+            // Verificação de duplicidade
+            if (alunos.Any(a => a.Id == id))
             {
                 Console.WriteLine("\nAluno com este ID já existe.");
                 return;
             }
 
-            // Verificar se o CPF já existe
             if (alunos.Any(a => a.Cpf == cpf))
             {
                 Console.WriteLine("\nAluno com este CPF já existe.");
                 return;
             }
 
-            Aluno aluno = new Aluno(nome, cpf, Id);
+            // Criação e adição do aluno
+            Aluno aluno = new Aluno(nome, cpf, id);
             alunos.Add(aluno);
             Console.WriteLine("\nAluno adicionado com sucesso!");
 
             // Atualizar o arquivo JSON
             SalvarAlunos();
+
+            Console.WriteLine("\nPressione qualquer tecla para continuar...");
+            Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
         }
 
 
@@ -1158,12 +1246,23 @@ namespace GerenciamentoEducacao
         static void ListarAlunos()
         {
             Console.Clear();
-            Console.WriteLine("|=============================================================|");
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            // Cabeçalho do Menu
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-            Console.WriteLine("|=============================================================|");
-            Console.WriteLine("==============================================");
-            Console.WriteLine("=========   LISTA DE ALUNOS CADASTRADOS   =====");
-            Console.WriteLine("==============================================");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("║*****             LISTA DE ALUNOS CADASTRADOS            *****║");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
 
             if (alunos.Count == 0)
             {
@@ -1171,44 +1270,59 @@ namespace GerenciamentoEducacao
             }
             else
             {
-                for (int i = 0; i < alunos.Count; i++)
+                // Formatação tabular dos alunos
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("╔═══════╦══════════════════════════════════════╦══════════════╦════════════╗");
+                Console.WriteLine("║ Nº    ║ Nome do Aluno                        ║ CPF          ║ ID do Aluno║");
+                Console.WriteLine("╠═══════╬══════════════════════════════════════╬══════════════╬════════════╣");
+
+                foreach (var aluno in alunos)
                 {
-                    Console.Clear(); // Limpa a tela para mostrar uma lista mais limpa e atualizada
-                    Console.WriteLine("|=============================================================|");
-                    Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-                    Console.WriteLine("|=============================================================|");
-                    Console.WriteLine("==============================================");
-                    Console.WriteLine("=========   LISTA DE ALUNOS CADASTRADOS   =====");
-                    Console.WriteLine("==============================================");
-                    Console.WriteLine($"{i + 1}. {alunos[i].Nome} - CPF: {alunos[i].Cpf} - Id: {alunos[i].Id}");
-
-                    Console.WriteLine("\nPressione ESC para cancelar e voltar ao menu principal...");
-
-                    var tecla = Console.ReadKey(intercept: true);
-                    if (tecla.Key == ConsoleKey.Escape)
-                    {
-                        Console.WriteLine("\nAção cancelada. Voltando ao menu principal...");
-                        return; // Encerra o método ListarAlunos e retorna ao menu principal
-                    }
+                    Console.ForegroundColor = ConsoleColor.White;
+                   Console.WriteLine($"║ {alunos.IndexOf(aluno) + 1,-5} ║ {aluno.Nome,-35}  ║ {aluno.Cpf,-12 } ║  {aluno.Id,-10}║");
                 }
+                Console.WriteLine("╚═══════╩══════════════════════════════════════╩══════════════╩════════════╝");
             }
 
-            // Após listar todos os alunos, permite ao usuário pressionar uma tecla para continuar
+            // Pausa para permitir que o usuário veja a mensagem antes de continuar
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\nPressione qualquer tecla para continuar...");
             Console.ReadKey();
         }
+
         static void RemoverAlunoPorId()
         {
             Console.Clear();
-            Console.WriteLine("|=============================================================|");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-            Console.WriteLine("|=============================================================|");
-            Console.WriteLine("==============================================");
-            Console.WriteLine("=========   REMOVER ALUNO POR ID   ===========");
-            Console.WriteLine("==============================================");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("║*****             REMOVER ALUNO POR ID                  *****║");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            // Listar alunos antes da remoção
             ListarAlunos();
-            Console.Write("\nDigite o Id do aluno a ser removido: ");
-            int id = int.Parse(Console.ReadLine());
+            Console.Write("\nDigite o ID do aluno a ser removido: ");
+
+            // Verificar entrada do usuário
+            if (!int.TryParse(Console.ReadLine(), out int id))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+                return;
+            }
 
             // Buscar o aluno pelo ID
             Aluno aluno = alunos.FirstOrDefault(a => a.Id == id);
@@ -1216,45 +1330,102 @@ namespace GerenciamentoEducacao
             if (aluno != null)
             {
                 alunos.Remove(aluno);
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\nAluno removido com sucesso!");
+                Console.ForegroundColor = ConsoleColor.White;
                 SalvarAlunos(); // Atualiza o arquivo após remoção
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\nAluno não encontrado com este ID.");
+                Console.ForegroundColor = ConsoleColor.White;
             }
 
+            Console.WriteLine("\nPressione qualquer tecla para continuar...");
+            Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
         }
+
 
         static void AdicionarServico()
         {
             Console.Clear();
-            Console.WriteLine("|=============================================================|");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-            Console.WriteLine("|=============================================================|");
-            Console.WriteLine("==============================================");
-            Console.WriteLine("=========   ADICIONAR NOVO SERVIÇO   =========");
-            Console.WriteLine("==============================================");          
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("║*****             ADICIONAR NOVO SERVIÇO                *****║");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
+
             Console.Write("Digite o nome do serviço: ");
             string nome = Console.ReadLine();
-            Console.Write("Digite o Id do serviço: ");
-            int id = int.Parse(Console.ReadLine());
-            
+
+            // Verificar se o nome do serviço não está vazio
+            if (string.IsNullOrWhiteSpace(nome))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nNome do serviço não pode estar vazio.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+                return;
+            }
+
+            Console.Write("Digite o ID do serviço: ");
+            if (!int.TryParse(Console.ReadLine(), out int id))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+                return;
+            }
+
+            // Verificar se o ID já existe
+            if (servicos.Any(s => s.Id == id))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nJá existe um serviço com este ID.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+                return;
+            }
+
             Servico servico = new Servico(nome, id);
             servicos.Add(servico);
+
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nServiço adicionado com sucesso!");
-            SalvarServicos(); // Atualiza o arquivo após adicionar serviço
+            Console.ForegroundColor = ConsoleColor.White;
+
+            SalvarServicos(); // Atualiza o arquivo após adicionar o serviço
+            Console.WriteLine("\nPressione qualquer tecla para continuar...");
+            Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
         }
+
 
         static void ListarServicos()
         {
             Console.Clear();
-            Console.WriteLine("|=============================================================|");
-            Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-            Console.WriteLine("|=============================================================|");
-            Console.WriteLine("==============================================");
-            Console.WriteLine("=========   LISTA DE SERVIÇOS CADASTRADOS   ===");
-            Console.WriteLine("==============================================");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ **********     SISTEMA DE GERENCIAMENTO DE ESCOLA  ******** ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ **********     LISTA DE SERVIÇOS CADASTRADOS       *********║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
 
             if (servicos.Count == 0)
             {
@@ -1262,35 +1433,77 @@ namespace GerenciamentoEducacao
             }
             else
             {
-                for (int i = 0; i < servicos.Count; i++)
+                // Cabeçalho da tabela
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("╔═══════╦══════════════════════════════════════╗");
+                Console.WriteLine("║ ID    ║ Nome do Serviço                      ║");
+                Console.WriteLine("╠═══════╬══════════════════════════════════════╝");
+
+                // Listar serviços de forma tabular
+                foreach (var servico in servicos)
                 {
-                    Console.WriteLine($"{i + 1}. {servicos[i].Nome} {servicos[i].Id}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    // Ajuste para garantir o alinhamento da tabela
+                    Console.WriteLine($"║ {servico.Id,-5} ║ {servico.Nome,-35}  ║");
                 }
+
+                // Rodapé da tabela
+                Console.WriteLine("╚═══════╩══════════════════════════════════════╝");
             }
+
+            Console.WriteLine("\nPressione qualquer tecla para continuar...");
+            Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
         }
+
+
         static void ProcurarAlunoPorIdMenu()
         {
             Console.Clear();
-            Console.WriteLine("|=============================================================|");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-            Console.WriteLine("|=============================================================|");
-            Console.WriteLine("==============================================");
-            Console.WriteLine("======  PROCURAR ALUNO POR ID ================");
-            Console.WriteLine("==============================================");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("║*****           PROCURAR ALUNO POR ID                  *****║");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
+
             Console.Write("Digite o ID do aluno: ");
-            int id = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int id))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+                return;
+            }
 
             Aluno aluno = ProcurarAlunoPorId(id);
 
             if (aluno != null)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"\nAluno encontrado: Nome: {aluno.Nome}, CPF: {aluno.Cpf}, ID: {aluno.Id}");
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\nAluno não encontrado.");
             }
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine("\nPressione qualquer tecla para continuar...");
+            Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
         }
+
 
         static Aluno ProcurarAlunoPorId(int id)
         {
@@ -1301,19 +1514,36 @@ namespace GerenciamentoEducacao
         static void RemoverServico()
         {
             Console.Clear();
-            Console.WriteLine("|=============================================================|");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-            Console.WriteLine("|=============================================================|");
-            Console.WriteLine("==============================================");
-            Console.WriteLine("=========   REMOVER SERVIÇO POR ID   ==========");
-            Console.WriteLine("==============================================");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("║*****           REMOVER SERVIÇO POR ID                   *****║");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
 
             // Listar serviços para o usuário escolher
             ListarServicos();
 
             // Solicitar o ID do serviço a ser removido
             Console.Write("\nDigite o ID do serviço a ser removido: ");
-            int id = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int id))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+                return;
+            }
 
             // Buscar o serviço pelo ID
             Servico servico = servicos.FirstOrDefault(s => s.Id == id);
@@ -1321,30 +1551,53 @@ namespace GerenciamentoEducacao
             if (servico != null)
             {
                 servicos.Remove(servico);
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\nServiço removido com sucesso!");
                 SalvarServicos(); // Atualiza o arquivo após remoção
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\nServiço não encontrado com este ID.");
             }
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine("\nPressione qualquer tecla para continuar...");
+            Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
         }
 
 
         static void AssociarServicoAAluno()
         {
             Console.Clear();
-            Console.WriteLine("|=============================================================|");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("|==========   SISTEMA DE GERENCIAMENTO DE ESCOLA  ============|");
-            Console.WriteLine("|=============================================================|");
-            Console.WriteLine("==============================================");
-            Console.WriteLine("====== ASSOCIAÇÃO DE SERVIÇOS A ALUNO ========");
-            Console.WriteLine("==============================================");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("║ *********************************************************** ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("║*****      ASSOCIAÇÃO DE SERVIÇOS A ALUNO                *****║");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("═══════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
 
             // Listar alunos e solicitar ID
             ListarAlunos();
             Console.Write("\nDigite o ID do aluno: ");
-            int alunoId = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int alunoId))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+                return;
+            }
 
             // Buscar o aluno pelo ID
             Aluno aluno = alunos.FirstOrDefault(a => a.Id == alunoId);
@@ -1354,7 +1607,15 @@ namespace GerenciamentoEducacao
                 // Listar serviços e solicitar ID
                 ListarServicos();
                 Console.Write("Digite o ID do serviço: ");
-                int servicoId = int.Parse(Console.ReadLine());
+                if (!int.TryParse(Console.ReadLine(), out int servicoId))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nID inválido. Por favor, insira um número inteiro.");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    return;
+                }
 
                 // Buscar o serviço pelo ID
                 Servico servico = servicos.FirstOrDefault(s => s.Id == servicoId);
@@ -1369,27 +1630,36 @@ namespace GerenciamentoEducacao
                         DataPrestacao = DateTime.Now
                     };
                     servicosPrestados.Add(servicoPrestado);
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("\nServiço associado ao aluno com sucesso!");
                     SalvarServicosPrestados(); // Atualiza o arquivo após associação
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\nServiço não encontrado com este ID.");
                 }
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\nAluno não encontrado com este ID.");
             }
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine("\nPressione qualquer tecla para continuar...");
+            Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
         }
 
 
         static void ListarServicosPorAluno()
         {
             Console.Clear();
-            Console.WriteLine("==============================================");
-            Console.WriteLine("====== SERVIÇOS ASSOCIADOS A UM ALUNO ========");
-            Console.WriteLine("==============================================");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ **********     SERVIÇOS ASSOCIADOS A UM ALUNO      ********* ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.White;
 
             // Listar alunos e solicitar ID
             ListarAlunos();
@@ -1405,9 +1675,11 @@ namespace GerenciamentoEducacao
                 var servicosPorAluno = servicosPrestados.Where(sp => sp.AlunoCpf == aluno.Cpf).ToList();
 
                 Console.Clear();
-                Console.WriteLine("==============================================");
-                Console.WriteLine("========   SERVIÇOS ASSOCIADOS AO ALUNO   =====");
-                Console.WriteLine("==============================================");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
+                Console.WriteLine($"║ ****     SERVIÇOS DO ALUNO: {aluno.Nome.ToUpper()}      ****║");
+                Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+                Console.ForegroundColor = ConsoleColor.White;
 
                 if (servicosPorAluno.Count == 0)
                 {
@@ -1415,10 +1687,22 @@ namespace GerenciamentoEducacao
                 }
                 else
                 {
-                    foreach (var servicoPrestado in servicosPorAluno)
+                    // Cabeçalho da tabela
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("╔═══════╦══════════════════════════════════════╦═════════════════════╗");
+                    Console.WriteLine("║  ID   ║ Nome do Serviço                      ║ Data da Prestação   ║");
+                    Console.WriteLine("╠═══════╬══════════════════════════════════════╬═════════════════════╣");
+
+                    // Listar serviços prestados ao aluno de forma tabular
+                    for (int i = 0; i < servicosPorAluno.Count; i++)
                     {
-                        Console.WriteLine($"Serviço: {servicoPrestado.ServicoNome} - Data: {servicoPrestado.DataPrestacao}");
+                        var servicoPrestado = servicosPorAluno[i];
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine($"║ {servicoPrestado.ServicoId,-5} ║ {servicoPrestado.ServicoNome,-36} ║ {servicoPrestado.DataPrestacao:dd/MM/yyyy,-17} ║");
                     }
+
+                    // Rodapé da tabela
+                    Console.WriteLine("╚═══════╩══════════════════════════════════════╩═════════════════════╝");
                 }
             }
             else
@@ -1429,6 +1713,8 @@ namespace GerenciamentoEducacao
             Console.WriteLine("\nPressione qualquer tecla para continuar...");
             Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
         }
+
+
         static void CarregarDados()
         {
             // Carregar alunos
