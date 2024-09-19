@@ -1,10 +1,12 @@
 {
   "Alunos": [],
-  "Servicos": [
+  "Servicos": [],
+  "ServicosPrestados": [
     {
-      "Nome": "trabaio",
-      "Id": 9090
+      "AlunoCpf": "09320932",
+      "ServicoNome": "trabaio",
+      "ServicoId": 0,
+      "DataPrestacao": "2024-09-19T14:40:32.4975493-03:00"
     }
-  ],
-  "ServicosPrestados": []
+  ]
 }

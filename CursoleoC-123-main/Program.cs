@@ -1186,30 +1186,38 @@ namespace GerenciamentoEducacao
             // Entrada dos dados do aluno
             Console.Write("Digite o nome do aluno: ");
             string nome = Console.ReadLine();
-            Console.Write("Digite o CPF do aluno: ");
-            string cpf = Console.ReadLine();
-            Console.Write("Digite o Id do aluno: ");
-            int id;
-
-            // Validação do ID
-            bool idValido = int.TryParse(Console.ReadLine(), out id);
-            if (!idValido)
-            {
-                Console.WriteLine("\nID inválido. Digite um número válido.");
-                return;
-            }
 
             // Validação do nome
-            if (string.IsNullOrWhiteSpace(nome))
+            if (string.IsNullOrWhiteSpace(nome) || !nome.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
             {
-                Console.WriteLine("\nNome do aluno não pode estar vazio.");
+                Console.WriteLine("\nNome do aluno inválido. O nome deve conter apenas letras.");
+                Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+                Console.ReadKey();
                 return;
             }
+
+            Console.Write("Digite o CPF do aluno: ");
+            string cpf = Console.ReadLine();
 
             // Validação do CPF
             if (cpf.Length != 11 || !cpf.All(char.IsDigit))
             {
-                Console.WriteLine("\nCPF inválido. O CPF deve conter 11 dígitos.");
+                Console.WriteLine("\nCPF inválido. O CPF deve conter 11 dígitos e ser composto apenas por números.");
+                Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            Console.Write("Digite o Id do aluno: ");
+            int id;
+
+            // Validação do ID (aceita apenas números)
+            bool idValido = int.TryParse(Console.ReadLine(), out id);
+            if (!idValido)
+            {
+                Console.WriteLine("\nID inválido. O ID deve ser composto apenas por números.");
+                Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+                Console.ReadKey();
                 return;
             }
 
@@ -1217,12 +1225,16 @@ namespace GerenciamentoEducacao
             if (alunos.Any(a => a.Id == id))
             {
                 Console.WriteLine("\nAluno com este ID já existe.");
+                Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+                Console.ReadKey();
                 return;
             }
 
             if (alunos.Any(a => a.Cpf == cpf))
             {
                 Console.WriteLine("\nAluno com este CPF já existe.");
+                Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+                Console.ReadKey();
                 return;
             }
 
@@ -1314,10 +1326,20 @@ namespace GerenciamentoEducacao
             Console.Write("\nDigite o ID do aluno a ser removido: ");
 
             // Verificar entrada do usuário
-            if (!int.TryParse(Console.ReadLine(), out int id))
+            if (alunos.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nNenhum aluno cadastrado no sistema.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            if (!int.TryParse(Console.ReadLine(), out int id) || id <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro.");
+                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro positivo.");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\nPressione qualquer tecla para continuar...");
                 Console.ReadKey();
@@ -1335,6 +1357,7 @@ namespace GerenciamentoEducacao
                 Console.ForegroundColor = ConsoleColor.White;
                 SalvarAlunos(); // Atualiza o arquivo após remoção
             }
+           
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -1370,26 +1393,25 @@ namespace GerenciamentoEducacao
             string nome = Console.ReadLine();
 
             // Verificar se o nome do serviço não está vazio
-            if (string.IsNullOrWhiteSpace(nome))
+            if (string.IsNullOrWhiteSpace(nome) || !nome.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+            {
+                Console.WriteLine("\nNome do aluno inválido. O nome deve conter apenas letras.");
+                Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            Console.Write("Digite o ID do serviço: ");
+            if (!int.TryParse(Console.ReadLine(), out int id) || id <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\nNome do serviço não pode estar vazio.");
+                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro positivo.");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\nPressione qualquer tecla para continuar...");
                 Console.ReadKey();
                 return;
             }
 
-            Console.Write("Digite o ID do serviço: ");
-            if (!int.TryParse(Console.ReadLine(), out int id))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro.");
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                Console.ReadKey();
-                return;
-            }
 
             // Verificar se o ID já existe
             if (servicos.Any(s => s.Id == id))
@@ -1476,15 +1498,16 @@ namespace GerenciamentoEducacao
             Console.ForegroundColor = ConsoleColor.White;
 
             Console.Write("Digite o ID do aluno: ");
-            if (!int.TryParse(Console.ReadLine(), out int id))
+            if (!int.TryParse(Console.ReadLine(), out int id) || id <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro.");
+                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro positivo.");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\nPressione qualquer tecla para continuar...");
                 Console.ReadKey();
                 return;
             }
+
 
             Aluno aluno = ProcurarAlunoPorId(id);
 
@@ -1535,15 +1558,16 @@ namespace GerenciamentoEducacao
 
             // Solicitar o ID do serviço a ser removido
             Console.Write("\nDigite o ID do serviço a ser removido: ");
-            if (!int.TryParse(Console.ReadLine(), out int id))
+            if (!int.TryParse(Console.ReadLine(), out int id) || id <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro.");
+                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro positivo.");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\nPressione qualquer tecla para continuar...");
                 Console.ReadKey();
                 return;
             }
+
 
             // Buscar o serviço pelo ID
             Servico servico = servicos.FirstOrDefault(s => s.Id == id);
@@ -1586,13 +1610,24 @@ namespace GerenciamentoEducacao
             Console.WriteLine("═══════════════════════════════════════════════════════════════");
             Console.ForegroundColor = ConsoleColor.White;
 
+            // Verificar se há alunos cadastrados
+            if (alunos.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nNão há alunos cadastrados no sistema.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+                Console.ReadKey();
+                return;
+            }
+
             // Listar alunos e solicitar ID
             ListarAlunos();
             Console.Write("\nDigite o ID do aluno: ");
-            if (!int.TryParse(Console.ReadLine(), out int alunoId))
+            if (!int.TryParse(Console.ReadLine(), out int id) || id <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro.");
+                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro positivo.");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\nPressione qualquer tecla para continuar...");
                 Console.ReadKey();
@@ -1600,53 +1635,69 @@ namespace GerenciamentoEducacao
             }
 
             // Buscar o aluno pelo ID
-            Aluno aluno = alunos.FirstOrDefault(a => a.Id == alunoId);
+            Aluno aluno = alunos.FirstOrDefault(a => a.Id == id);
 
-            if (aluno != null)
-            {
-                // Listar serviços e solicitar ID
-                ListarServicos();
-                Console.Write("Digite o ID do serviço: ");
-                if (!int.TryParse(Console.ReadLine(), out int servicoId))
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("\nID inválido. Por favor, insira um número inteiro.");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                    Console.ReadKey();
-                    return;
-                }
-
-                // Buscar o serviço pelo ID
-                Servico servico = servicos.FirstOrDefault(s => s.Id == servicoId);
-
-                if (servico != null)
-                {
-                    // Criar e adicionar o serviço prestado
-                    ServicoPrestado servicoPrestado = new ServicoPrestado
-                    {
-                        AlunoCpf = aluno.Cpf,
-                        ServicoNome = servico.Nome,
-                        DataPrestacao = DateTime.Now
-                    };
-                    servicosPrestados.Add(servicoPrestado);
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("\nServiço associado ao aluno com sucesso!");
-                    SalvarServicosPrestados(); // Atualiza o arquivo após associação
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("\nServiço não encontrado com este ID.");
-                }
-            }
-            else
+            if (aluno == null)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\nAluno não encontrado com este ID.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+                return;
             }
-            Console.ForegroundColor = ConsoleColor.White;
 
+            // Verificar se há serviços cadastrados
+            if (servicos.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nNão há serviços cadastrados no sistema.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            // Listar serviços e solicitar ID
+            ListarServicos();
+            Console.Write("\nDigite o ID do serviço: ");
+            if (!int.TryParse(Console.ReadLine(), out int servicoId) || servicoId <= 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nID inválido. Por favor, insira um número inteiro positivo.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+                return;
+            }
+
+            // Buscar o serviço pelo ID
+            Servico servico = servicos.FirstOrDefault(s => s.Id == servicoId);
+
+            if (servico == null)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nServiço não encontrado com este ID.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+                return;
+            }
+
+            // Criar e adicionar o serviço prestado
+            ServicoPrestado servicoPrestado = new ServicoPrestado
+            {
+                AlunoCpf = aluno.Cpf,
+                ServicoNome = servico.Nome,
+                DataPrestacao = DateTime.Now
+            };
+            servicosPrestados.Add(servicoPrestado);
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nServiço associado ao aluno com sucesso!");
+            SalvarServicosPrestados(); // Atualiza o arquivo após associação
+
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\nPressione qualquer tecla para continuar...");
             Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
         }
